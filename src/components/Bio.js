@@ -31,10 +31,10 @@ function Bio() {
               }}
             />
             <p>
-              It is my blog about stuff I wanted to better understand.
+              Osobní blog o JavaScript a React tématech, kterým jsem chtěl lépe porozumnět.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
+                Sledujte mě na Twitteru
               </a>
             </p>
           </div>
