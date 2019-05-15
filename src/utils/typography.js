@@ -3,21 +3,21 @@ import fairyGatesTheme from 'typography-theme-fairy-gates'
 
 fairyGatesTheme.googleFonts = [
   {
-    name: "Work Sans",
-    styles: ["400", "400i", "600", "700"]
-  }
+    name: 'Work Sans',
+    styles: ['400', '400i', '600', '700'],
+  },
 ]
 
-fairyGatesTheme.bodyFontFamily = ["Work Sans", "sans-serif"]
+fairyGatesTheme.bodyFontFamily = ['Work Sans', 'sans-serif']
 
 fairyGatesTheme.overrideThemeStyles = () => {
   return {
     'a.gatsby-resp-image-link': {
-      boxShadow: 'none'
+      boxShadow: 'none',
     },
-    "h1 a, h2 a, h3 a, h4 a, h5 a, h6 a": {
-      backgroundImage: 'none'
-    }
+    'h1 a, h2 a, h3 a, h4 a, h5 a, h6 a': {
+      backgroundImage: 'none',
+    },
   }
 }
 
