@@ -19,13 +19,13 @@ všude zůstává stejná. Prostě chceme oddělit funkční od prezenční vrst
 
 Původní návrh je, že komponentě vytvoříme `prop` s názvem "render", která bude
 mít podobu funkce navracející `React element` k vyrendrování. Pokud komponenta
-využívá tento pattern, nazývá se "render prop component". Daná `prop` se může
+využívá tento pattern, nazývá se "Render Prop component". Daná `prop` se může
 jmenovat libovolně a ne pouze "render".
 
 Po té se ale začala využívat `prop children`, která má onu podobu funkce, neboli
 "children as a function".
 
-###Render prop komponenta
+###Render Prop komponenta
 
 Jako velmi základní příklad si můžeme ukázat zjednoduššenou `Fetch` komponentu,
 kterou chceme použít na vícero místech pro různé fetchování dat. Tato komponenta
@@ -77,13 +77,12 @@ class App extends Component {
         <Fetch url="renderprops.rocks">
           {({ loading, error, data }) => {
             if (error !== null) {
-              console.log(error)
               return <p>{error.toString()}</p>
             }
             return loading ? (
               <p>'Loading...'</p>
             ) : (
-              <p>{data.contents.quotes[0].quote}</p>
+              <p>{data}</p>
             )
           }}
         </Fetch>
@@ -96,7 +95,7 @@ class App extends Component {
 Pomocí destructuringu objektu statu z Fetch komponenty rovnou získáme proměnné
 `loading`, `error` a `data`. Podle nich můžeme vyrendrovat libovolné informace.
 
-###Alternativy Render props
+###Alternativy Render Props
 
 Namísto Render props je možné pro oddělení funkční a prezentační vrstvy použít
 **Higher-Order Components**, leč HOC se mi zdají už jen pro pochopení
