@@ -31,9 +31,9 @@ function Bio() {
               }}
             />
             <p>
-              Osobní blog o JavaScript a React tématech, kterým jsem chtěl lépe porozumnět.
+              Osobní blog zejména o Reactu a JavaScriptu.
               {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
+              <a href={`https://twitter.com/${social.twitter}`} target="_blank">
                 Sledujte mě na Twitteru
               </a>
             </p>
