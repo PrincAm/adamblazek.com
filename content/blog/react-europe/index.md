@@ -33,13 +33,14 @@ Také se zmínilo, že se již brzy můžeme těšit na Concurent Mode umožňuj
 schedulování renderování pro lepší performance nebo Suspense pro zjednodušení
 fetchovaní.
 
-Dále se pokračovalo už jen s React Hooks. Jedná se o speciální funkce, které nám
-dovolují zacházet s novými React featurami uvnitř komponenty. Hooky fungují
-pouze ve functional komponentách! Jsou základní tři useState, useEffect,
-useContext a pak několik dalších, pokročilých.
+Dále se pokračovalo už jen s React Hooks. Jsou to funkce, které nám dovolují
+zacházet s lifecycle featurami uvnitř functional komponent. Hooky fungují pouze
+ve functional komponentách! Jsou základní tři useState, useEffect, useContext a
+pak několik dalších, pokročilých. Podrobněji o nich snad přístě.
 
-Ale co bych zde rád více popsal je využití Render Props dohromady s React Hooks
-a navrhování Styled Components.
+Ale co bych zde rád více popsal je využití
+[Render Props](/content/blog/render-props/index.md) dohromady s React Hooks a
+navrhování Styled Components.
 
 ### Render Props a Reack Hooks
 
