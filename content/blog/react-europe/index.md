@@ -1,103 +1,50 @@
 ---
 title: React Europe workshop!
 date: '2019-10-06'
-draft: true
 ---
 
-## ReactEurope: React.js workshop
+ReactEurope konference se opět konala v Paříži 23. a 24. května, leč letos jsem
+navštívil pouze dvou denní workshop, který ji předcházel. Vydal jsem se na něj
+již podruhé, po roce a znovu se vše odehrálo ve starém známém konferenčním
+centru [Espace Charenton](https://goo.gl/maps/oxu1RK6p4EeqoALq6). Není to extra
+místo konání, ale francouzské občerstvení vše vynahradí. Croissantíčky s
+kávičkou a obložené bagety byly výborné.
 
-Prvni den
+![card component](react_europe.jpg)[]()
 
-React.js workshop jsem navštívil podruhé, po roce a začal jako vzdy na starem
-znamem miste Espace Charenton. Není to extra místo, ale frnacouzské občerstvení
-vše vynahradí. Kroasántíčky s kávičkou a obložené bagety byly výborné. Ackoliv
-avizovali probrani vsech featur Reactu 17, cely workshop se tocil okolo Hooks ve
-spojeni s jednotlivymi tematy. Byly jimo DataFetching a jak fetchovat data
-pomoci useEfektu, dale vyuziti cutom Hooku. Po te jsme si ukazali osetrovani
-chyb pomoci ErrorBounderis ve spojeni s RenderProps, ktere stale jeste nejsou
-mrtve a provdepodobne se nimi budeme jeste chvili vidat. Pote se pouzil dalsi
-hook useReducer. Nejzajimavejsi mi prisel koncept Scalable Components, kdy
-prednasejici popsali vytvareni spravneho API komponenty, se kterym se setkali
-pri tvorbe jejich UI kitu - Material UI a Smooth UI. Na zaver jsme na nasi
-aplikaci pripojili kontext a nastavili internacionalizaci nasi komponenty.
+Workshop vedl Greg Bergé, autor [Shipit](https://github.com/shipitjs/shipit),
+[SVGR](https://github.com/smooth-code/svgr) nebo SmoothUI a Oliver Tassiari,
+spoluzakladatel neméně známého
+[Material-UI](https://github.com/mui-org/material-ui). Ačkoliv název akce nesl
+jméno `React.js Workshop on React 17`, hlavním tématem celého workshopu byly
+[Hooks](https://reactjs.org/docs/hooks-intro.html), které jsou součástí Reactu
+od února 2019, verze 16.8. Popravdě jsem za to byl i rád, že se jedná o
+praktická támata, která je možné využít v praxi a na produkci.
 
-Druhy den jiz byl volnejsi a hlavne jsme se zamerili na hook useRef()
+Úvodem jsme prolétli historii Reactu a základy. Jaká jsou jeho primitives,
+rozdíly mezi typy komponent, life cycle komponenty - fáze:
 
-Worshop byl veden Gregem Berge, zakladatelem SmoothUI, ShipIt nebo SVGR a
-Oliverem Tassiari, ktery zalozil Material-UI. Ucelenym tematem celeho workshopu
-byl ReackHooks, ktere jsou soucasti Reactu Unora 2019. Dale se zminolo, ze jiz
-brzy se muzeme tesit na Concurent Mode, ktery nam umozni schedulovani
-renderovani, coz nam zlepsi performance. Suspense byla dalsi zminena featura pro
-zjednoduseni fetchovani dat, ktera by mela byt brzy venku. SSR, vyuziti zejmeno
-pro SEO a performance, kdy nam server prvnim requestem rovnou vrati HTML na
-vyrenderovani stranky. PWA, offline aplikace, nice to have. Po te se proslo
-zakladni tema, jake jsou Primitives - JSX, element, komponenty, rozdily mezi
-komponentami atd. Life cycle komponenty. Face mount, update a unmount. Strucne
-receno, behem mount faze se vklada element do domu, pokud se element updatne je
-tato zmena reflektovana i do DOMU a behem unmount faze se element odstrani z
-DOMu. Render vs commit. React nejdrive posbira veskere zmeny behem render kroku
-a pote je commitne v celku. Hlavnim tematem celeho workshopu byly Hooks, tedy co
-to vlastne ten React Hook je. Je to specialni funkce, ktera nam dovoluje
-zachazet s novym React featurami ivnitr komponenty. Jsou zakladni tri hooky
-useState, useEffect, useContext, pak je nekolik dalsich, pokrocilych. Zakldanim
-pravidlem je, ze hooky funguji ve functional komponentach. Od zakladniho popisu
-a ukazce, jak pouzit hooks na klasickem countery, jsme postupne prosli k
-kontrolovanym vs. nekotrolovanym komponentam, pouziti effectu a jejich
-lifecyklu. Custom hooks, ErrorBoundaries. hCo bych zde vice popsal je pouziti
-Render props dohromady s React Hooks. Pokud bychom vzali nasledujici priklad
+1. mount - element se vkládá do DOMu
+2. update - komponenta se aktualizuje změnou props nebo statu, což je po té
+   reflektováno i změnou DOMu
+3. unmount - element se odstraní z DOMu
 
-ReactEurope worshop State
+Také se zmínilo, že se již brzy můžeme těšit na Concurent Mode umožňující
+schedulování renderování pro lepší performance nebo Suspense pro zjednodušení
+fetchovaní.
 
-- () => ‘’ as default value Canceling
-- const CancelToken = axios.CancelToken
-- const source = CancelToken.source()
+Dále se pokračovalo už jen s React Hooks. Jedná se o speciální funkce, které nám
+dovolují zacházet s novými React featurami uvnitř komponenty. Hooky fungují
+pouze ve functional komponentách! Jsou základní tři useState, useEffect,
+useContext a pak několik dalších, pokročilých.
 
-Refactor MRL Search
-
-- use hooks
-- responsive design
-- design better error messages - ErrorBoundaries
-- scalable components - material UI vs Ant - rozdily v API - co nejmensi
-  komponenty kopirujici DOM? - zacni s jendosuddim API, pak jej rozsir -
-  nepuzivej inline styles - bez prefixeru - Render Props
-- with hooks - to isolate logic and error handling - dopsat do blogu Global
-  state
-- immer js
-
-Druhy den React.ref
-
-- ref.current - dohledat informace
-- useImperativeHandle - predani napriklad vysky elementu
-- split code into smaller part - custom hooks
-- save listener to useRef and reference not to update avery time with
-  rerendering and add event listener only once on mounting of component
-- react have polyfill to provide names of code kyes events - PressDown, PressUp,
-  …
-- useMemo - for performance considaration - useForkRef - setting two
-  references - importance of “key” useLayoutEffect
-- commmit phaze
-- change height useDebugEffect
-- for debugging hooks - expose state etc. ConcurentMode
-- previsously called “async mode”
-- prepare for that
-  - no warnings - see slides
-- hidden prop - prerender
-- how to access DOM in node - example with measuring height Testing of Hooks
-- react-testing-library - providing plenty of options - console.log(options)
-  Tips
-- react- fast-form
-- dont use rect loadable
-- jest
-- npmtrends.com
-- compare traffic of libraries
-- npms.io
-- typescript tax article
+Ale co bych zde rád více popsal je využití Render Props dohromady s React Hooks
+a navrhování Styled Components.
 
 ### Render Props a Reack Hooks
 
-Ale co zde trochu více rád probral je využití Render Props s React Hooks. Tedy,
-jak bude vidět, Render Props ještě nejsou mrtvý! Pokud bych měl tento Hook, již
-zmíněný counter:
+Tedy, jak bude vidět, Render Props ještě nejsou mrtvý! Pokud bych měl tento
+Hook, counter:
 
 ```javascript
 function useCounter() {
@@ -128,11 +75,11 @@ function Example() {
 }
 ```
 
-Pak každý tick intevalu, `setCount()` je zavolán, nová hodnota state je
-generována a `Example` se přerendruje. Ale kromě něj se přerendruje i
-`OtherStuff`! Který ale `count` nepoužívá. Navíc, pokud by `useCounter` vyhodilo
+Pak je zavolán `setCount()` s každým tickem intevalu, je vygenerována nová
+hodnota statu a `Example` se přerendruje. Kromě něj se přerendruje i
+`OtherStuff`, který ale `count` nepoužívá! Navíc, pokud by `useCounter` vyhodilo
 chybu, která komponenta bude ta s chybou? `Example`! A proto budeme izolovat
-logiku přes Render Props následovně.
+logiku přes Render Props.
 
 ```javascript
 function Counter({ children }) {
@@ -157,20 +104,160 @@ function Example() {
 
 Co se tedy změnilo, `Example` se nepřerenderuje a ani `OtherStuff`. `Counter`
 ale ano a pokaždé zavolá children funkci. Tedy nám Render Props dovolili pěkně
-odizolovat renderování :) A pokud bychom dále zabalili `Counter` do
+odizolovat renderování 🙂 A pokud bychom dále zabalili `Counter` do
 `ErrorBoundaries`, dovolí nám i pěkně odchytnout chybu.
 
-Následovalo probrání kapitoly `useReducer()` pro případ řízení globálního statu.
-Pěkný příklad byl pro `Styled Components`. Uloží styly společně s elementem.
-Mělo by to vyřešit klasický scénář, kdy pro jednoduchou komponentu nám PO nařídí
-udělat jen malou změnu, kdybychom například z kartičky měli odstranit titulek.
-Po té se vyjádří UX designer, že titulek má mít zelené pozadí a nakonec z
-oddělení marketingu chtěji, aby obsahoval malý ad banner. Tyto požadavky jsou
-nekonečné a postupné změny s využitím `Styled Components` mohou být mnohem
-jednodušší. Doporučuje se začít co nejblíže k samotnému DOM nodu a neabstrahovat
-příliš brzo.
+### Styled Components
 
-Dále jsme se zaměřili na Context a použití `useMemo`, které nám uloží hodnoty
-dokud nedojde me změně.
+Pěkný příklad byl pro `Styled Components`. Styly se spojují s daným elementem,
+akceptují style funkce a podporují CSS syntaxy. A hlavně pomáhají vyřešit
+následující scénář. Máme požadavek pro vytvoření Card komponenty, která může
+vypadat následovně.
 
-Následoval hook `useRef` a interakce s DOMEM.
+![card component](card.png)[]()
+
+```javascript
+const CardHeader = styled.div``
+const CardBody = styled.div``
+
+const Card = ({title, text}) => (
+  <div>
+    <CardHeader>{title}</CardHeader>
+    <CardBody>{text}</CardBody>
+  </div>
+)
+
+<Card title="Hello!" text="I am Card" />
+```
+
+Pak se ale na scéně objeví product owner s požadavkem, že by chtěl odtranit
+titulek, což pro nás není žádný problém a přidáme podmínku k jeho vyrenderování.
+
+![card component without title](card_no_title.png)[]()
+
+```javascript
+const CardHeader = styled.div``
+const CardBody = styled.div``
+
+const Card = ({title, text}) => (
+  <div>
+    {title && <CardHeader>{title}</CardHeader>}
+    <CardBody>{text}</CardBody>
+  </div>
+)
+
+<Card text="I am Card" />
+```
+
+Potom se ale ozve UX designér, že by pozadí titulku mělo být zelené, což vypadá
+mnohem lépe. Jak je libo, i to můžeme udělat a přidáme novou props definující
+barvu pozadí.
+
+![card component with green title](card_green_title.png)[]()
+
+```javascript
+const CardHeader = styled.div``
+const CardBody = styled.div``
+
+const Card = ({title, titleBackground, text}) => (
+  <div>
+    {title && (
+      <CardHeader style={{ backgroundColor: titleBackground}}>
+        {title}
+      </CardHeader>
+    )}
+    <CardBody>{text}</CardBody>
+  </div>
+)
+
+<Card title="Hello!" titleBackground="green" text="I am Card" />
+```
+
+Jen co změny doděláme, objeví se nový marketing manager s přáním, že by chtěl
+zobrazit malý ad banner namisto titulku. Mno, i to je možné a opět upravíme naší
+komponentu, aby se přizpůsobila i tomuto požadavku.
+
+![card component with ad](card_with_ad.png)[]()
+
+```javascript
+const CardHeader = styled.div``
+const CardBody = styled.div``
+const CardAd = styled.div``
+
+const Card = ({title, titleBackground, ad, text}) => (
+  <div>
+    {add && <CardAd>{ad}</CardAd>}
+    {title && (
+      <CardHeader style={{ backgroundColor: titleBackground}}>
+        {title}
+      </CardHeader>
+    )}
+    <CardBody>{text}</CardBody>
+  </div>
+)
+
+<Card
+  titleBackground="green"
+  ad="👻 -50% on all articles, happy halloween!"
+  text="I am Card"
+/>
+```
+
+Ale přidávání dalších a dalších požadavků už je neudržitelné. Tyto požadavky
+jsou nekonečné a postupné změny s využitím `Styled Components` mohou být mnohem
+jednodušší.
+
+```javascript
+export const Card = styled.div``
+Card.Body = styled.div``
+Card.Header = styled.div``
+```
+
+A vše by bylo mnohem jednodušší!
+
+![card styled component](card_styled.png)[]()
+
+```javascript
+<Card>
+  <Card.Header>Hello!</Card.Header>
+  <Card.Body>I am a card</Card.Body>
+</Card>
+```
+
+![card styled component without title](card_styled_no_title.png)[]()
+
+```javascript
+<Card>
+  <Card.Body>I am a card</Card.Body>
+</Card>
+```
+
+![card styled component with green title](card_styled_green_title.png)[]()
+
+```javascript
+<Card>
+  <Card.Header style={{ backgroundColor: 'green' }}>Hello</Card.Header>
+  <Card.Body>I am a Card</Card.Body>
+</Card>
+```
+
+![card styled component with ad](card_styled_with_ad.png)[]()
+
+```javascript
+<Card>
+  <div
+    style={{
+      padding: 5,
+      backgroundColor: 'black',
+      color: 'white',
+      fontSize: 14,
+    }}
+  >
+    👻 -50% on all articles, happy halloween!
+  </div>
+  <Card.Body>I am a Card</Card.Body>
+</Card>
+```
+
+Doporučuje se začít co nejblíže k samotnému DOM nodu a neabstraktovat příliš
+brzo 😉
