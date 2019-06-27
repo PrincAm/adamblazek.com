@@ -1,6 +1,6 @@
 ---
 title: React Europe workshop!
-date: '2019-05-27'
+date: '2019-06-27'
 ---
 
 ReactEurope konference se opět konala v Paříži 23. a 24. května, leč letos jsem
