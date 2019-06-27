@@ -296,4 +296,4 @@ tvůrci Smooth UI a Material UI setkali behěm vývoje. Ať už šlo o využití
 referencí, či designování vlastního API komponenty.
 
 Workshop bych doporučil a snad se na příštím ročníku budeme již zabývat
-Concurrent Modem nebo Suspense ✌️
+Concurrent Mode nebo Suspense ✌️
