@@ -1,25 +1,28 @@
 ---
 title: React Europe workshop!
-date: '2019-10-06'
+date: '2019-05-27'
 ---
 
 ReactEurope konference se opět konala v Paříži 23. a 24. května, leč letos jsem
 navštívil pouze dvou denní workshop, který ji předcházel. Vydal jsem se na něj
 již podruhé, po roce a znovu se vše odehrálo ve starém známém konferenčním
-centru [Espace Charenton](https://goo.gl/maps/oxu1RK6p4EeqoALq6). Není to extra
-místo konání, ale francouzské občerstvení vše vynahradí. Croissantíčky s
-kávičkou a obložené bagety byly výborné.
+centru <a href="https://goo.gl/maps/oxu1RK6p4EeqoALq6" target="_blank">Espace
+Charenton</a>. Není to extra místo konání, ale francouzské občerstvení vše
+vynahradí. Croissantíčky s kávičkou a obložené bagety byly výborné.
 
 ![card component](react_europe.jpg)[]()
 
-Workshop vedl Greg Bergé, autor [Shipit](https://github.com/shipitjs/shipit),
-[SVGR](https://github.com/smooth-code/svgr) nebo SmoothUI a Oliver Tassiari,
-spoluzakladatel neméně známého
-[Material-UI](https://github.com/mui-org/material-ui). Ačkoliv název akce nesl
-jméno `React.js Workshop on React 17`, hlavním tématem celého workshopu byly
-[Hooks](https://reactjs.org/docs/hooks-intro.html), které jsou součástí Reactu
-od února 2019, verze 16.8. Popravdě jsem za to byl i rád, že se jedná o
-praktická támata, která je možné využít v praxi a na produkci.
+Workshop vedl Greg Bergé, autor
+<a href="https://github.com/shipitjs/shipit" target="_blank">Shipit</a>,
+<a href="https://github.com/smooth-code/svgr" target="_blank">SVGR</a> nebo
+SmoothUI a Oliver Tassiari, spoluzakladatel neméně známého
+<a href="https://github.com/mui-org/material-ui" target="_blank">Material-UI</a>.
+Ačkoliv název akce nesl jméno `React.js Workshop on React 17`, hlavním tématem
+celého workshopu byly
+<a href="https://reactjs.org/docs/hooks-intro.html" target="_blank">Hooks</a>,
+které jsou součástí Reactu od února 2019, verze 16.8. Popravdě jsem za to byl i
+rád, že se jedná o praktická támata, která je možné využít v praxi a na
+produkci.
 
 Úvodem jsme prolétli historii Reactu a základy. Jaká jsou jeho primitives,
 rozdíly mezi typy komponent, life cycle komponenty - fáze:
@@ -29,7 +32,7 @@ rozdíly mezi typy komponent, life cycle komponenty - fáze:
    reflektováno i změnou DOMu
 3. unmount - element se odstraní z DOMu
 
-Také se zmínilo, že se již brzy můžeme těšit na Concurent Mode umožňující
+Také se zmínilo, že se již brzy můžeme těšit na Concurrent Mode umožňující
 schedulování renderování pro lepší performance nebo Suspense pro zjednodušení
 fetchovaní.
 
@@ -39,8 +42,8 @@ ve functional komponentách! Jsou základní tři useState, useEffect, useContex
 pak několik dalších, pokročilých. Podrobněji o nich snad přístě.
 
 Ale co bych zde rád více popsal je využití
-[Render Props](/content/blog/render-props/index.md) dohromady s React Hooks a
-navrhování Styled Components.
+<a href="/render-props" target="_blank">Render Props</a> dohromady s React Hooks
+a navrhování Styled Components.
 
 ### Render Props a Reack Hooks
 
@@ -60,8 +63,8 @@ function useCounter() {
 }
 ```
 
-Kde použijeme hook `useState()` pro nastavení lokálního statu a `useEffect()`
-pro spuštění hooku každou sekundu. A použili jej v komponentě
+Použijeme hook `useState()` pro nastavení lokálního statu a `useEffect()` pro
+spuštění hooku každou sekundu. Aplikujeme ho následovně v komponentě.
 
 ```javascript
 function Example() {
@@ -106,16 +109,23 @@ function Example() {
 Co se tedy změnilo, `Example` se nepřerenderuje a ani `OtherStuff`. `Counter`
 ale ano a pokaždé zavolá children funkci. Tedy nám Render Props dovolili pěkně
 odizolovat renderování 🙂 A pokud bychom dále zabalili `Counter` do
-`ErrorBoundaries`, dovolí nám i pěkně odchytnout chybu.
+`ErrorBoundaries`, efektivně odchytnout chybu.
 
 ### Styled Components
 
-Pěkný příklad byl pro `Styled Components`. Styly se spojují s daným elementem,
-akceptují style funkce a podporují CSS syntaxy. A hlavně pomáhají vyřešit
-následující scénář. Máme požadavek pro vytvoření Card komponenty, která může
-vypadat následovně.
+Jednou z kapitol byl i pěkný příklad využití
+<a href="https://www.styled-components.com/" target="_blank">Styled
+Components</a>, kdy se styly spojují s jednotlivým elementem za použitím 'tagged
+template literals'. To odtraňuje mapování mezi komponentou a styly. Což znamená,
+že při definování stylů pak vytváříme normální React komponentu s připojenými
+styly. A hlavně pomáhají vyřešit následující scénář.
+
+Máme základní požadavek pro vytvoření Card komponenty, která může vypadat
+následovně.
 
 ![card component](card.png)[]()
+
+Což není žádný velký problém a naimplementovat ji třeba následovně.
 
 ```javascript
 const CardHeader = styled.div``
@@ -131,8 +141,8 @@ const Card = ({title, text}) => (
 <Card title="Hello!" text="I am Card" />
 ```
 
-Pak se ale na scéně objeví product owner s požadavkem, že by chtěl odtranit
-titulek, což pro nás není žádný problém a přidáme podmínku k jeho vyrenderování.
+Pak se ale na scéně objeví product owner s dalším požadavkem, že by chtěl
+odtranit titulek. Ok, přidáme podmínku k jeho vyrenderování.
 
 ![card component without title](card_no_title.png)[]()
 
@@ -175,7 +185,7 @@ const Card = ({title, titleBackground, text}) => (
 ```
 
 Jen co změny doděláme, objeví se nový marketing manager s přáním, že by chtěl
-zobrazit malý ad banner namisto titulku. Mno, i to je možné a opět upravíme naší
+zobrazit malý ad banner namísto titulku. Mno, i to je možné a opět upravíme naší
 komponentu, aby se přizpůsobila i tomuto požadavku.
 
 ![card component with ad](card_with_ad.png)[]()
@@ -204,17 +214,22 @@ const Card = ({title, titleBackground, ad, text}) => (
 />
 ```
 
-Ale přidávání dalších a dalších požadavků už je neudržitelné. Tyto požadavky
-jsou nekonečné a postupné změny s využitím `Styled Components` mohou být mnohem
-jednodušší.
+Přidávání dalších a dalších požadavků už je ale neudržitelné. Jsou nekonečné.
+
+Stačí málo a s využitím `Styled Components` se komponenta může přizpůsobit mnoha
+use casům.
 
 ```javascript
 export const Card = styled.div``
-Card.Body = styled.div``
 Card.Header = styled.div``
+Card.Body = styled.div``
 ```
 
-A vše by bylo mnohem jednodušší!
+A vše by bylo mnohem mnohem jednodušší! 😌 Takto si můžeme nadefinovat pěkné API
+komponenty, a potom využít pouze potřebné části, případně komponentu doplnit o
+další elementy.
+
+Jak by se vše přepsalo.
 
 ![card styled component](card_styled.png)[]()
 
@@ -260,5 +275,24 @@ A vše by bylo mnohem jednodušší!
 </Card>
 ```
 
-Doporučuje se začít co nejblíže k samotnému DOM nodu a neabstraktovat příliš
-brzo 😉
+Obecně se doporučuje začít co nejblíže k samotnému DOM nodu, nesnažit se
+vytvořit univerzální komponentu, ale složit ji z menších. Také by nemělo
+docházet k abstrakci příliš brzo, ale počkat na daná použití 😉
+
+<iframe src="https://codesandbox.io/embed/cards-styled-components-63e0i?fontsize=14" title="cards-styled-components" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<a href="https://code.react-advanced.smooth-code.com/">Materiály z workshopu</a>
+
+### Závěrem
+
+Na základě loňského absolvování celé konference a dalších recenzí od známých
+bych vyzdvihl workshop nad vlastní konferencí. React ekosystém se stabilizuje a
+za uplynulý rok se neobjevilo tolik novinek, a právě i proto se v letošním
+ročníku školení probíraly "pouze" Hooks.
+
+Skvělá byla praktická doporučení, jak předejít různým problémům, se kterými se
+tvůrci Smooth UI a Material UI setkali behěm vývoje. Ať už šlo o využití
+referencí, či designování vlastního API komponenty.
+
+Workshop bych doporučil a snad se na příštím ročníku budeme již zabývat
+Concurrent Modem nebo Suspense ✌️
