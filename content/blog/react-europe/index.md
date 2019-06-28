@@ -109,7 +109,7 @@ function Example() {
 Co se tedy změnilo, `Example` se nepřerenderuje a ani `OtherStuff`. `Counter`
 ale ano a pokaždé zavolá children funkci. Tedy nám Render Props dovolili pěkně
 odizolovat renderování 🙂 A pokud bychom dále zabalili `Counter` do
-`ErrorBoundaries`, efektivně odchytnout chybu.
+`ErrorBoundaries`, efektivně odchytnou chybu.
 
 ### Styled Components
 
@@ -160,7 +160,7 @@ const Card = ({title, text}) => (
 <Card text="I am Card" />
 ```
 
-Potom se ale ozve UX designér, že by pozadí titulku mělo být zelené, což vypadá
+Potom se ale ozve UX designer, že by pozadí titulku mělo být zelené, což vypadá
 mnohem lépe. Jak je libo, i to můžeme udělat a přidáme novou props definující
 barvu pozadí.
 
